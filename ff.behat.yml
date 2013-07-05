@@ -1,0 +1,54 @@
+default:
+  context:
+      class: 'FeatureContext'    
+      parameters:  
+        wd_host: 'http://10.75.220.174:4444/wd/hub'
+        wd_capabilities: { "browser": "firefox", "version": "16"}
+   
+  extensions:
+    Behat\MinkExtension\Extension:
+      base_url:  'http://wwwsit3.royalmail.com'
+      default_session: selenium2
+      javascript_session: selenium2
+      browser_name: 'firefox'
+      selenium2:                    
+        capabilities: { "browser": "firefox", "version": "4"}    
+
+
+
+EIB:
+  context:
+    class: 'EIBContext'
+  extensions:
+    Behat\MinkExtension\Extension:
+      base_url:  'http://wwwuat.royalmail.com/'
+      default_session: selenium2
+      javascript_session: selenium2
+      browser_name: 'firefox'
+      selenium2:                    
+        capabilities: { "browser": "firefox", "version": "4"}    
+
+createpart:
+ context:
+    class: 'createpart'
+ extensions:
+    Behat\MinkExtension\Extension:
+      base_url:  'http://wwwsit3.royalmail.com/scms/user/'
+      default_session: selenium2
+      javascript_session: selenium2
+      browser_name: 'firefox'
+      selenium2:                    
+        capabilities: { "browser": "firefox", "version": "4"}    
+ 
+cp:
+ context:
+    class: 'cpContext'
+ extensions:
+    Behat\MinkExtension\Extension:
+      base_url:  'http://wwwsit3.royalmail.com'
+      default_session: selenium2
+      javascript_session: selenium2
+      browser_name: 'firefox'
+      selenium2:                    
+        capabilities: { "browser": "firefox", "version": "4"}    
+ 
